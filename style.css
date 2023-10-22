@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.input{
+    visibility: hidden;
+}
+.label{
+    position: absolute;
+    width: 80px;
+    background-color: lightgray;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.circle{
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: 3px;
+    left: 2px;
+    position: absolute;
+    animation: close 0.4s linear forwards;
+    -webkit-animation: close 0.4s linear forwards;
+}
+
+.input:checked + .label{
+    background-color: white;
+}
+
+.input:checked + .label .circle{
+    background-color: black;
+    animation: open 0.4s linear forwards;
+    -webkit-animation: open 0.4s linear forwards;
+}
+
+@keyframes open{
+    0%{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    100%{
+        transform: translateX(40px);
+        -webkit-transform: translateX(40px);
+        -moz-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        -o-transform: translateX(40px);
+    }
+}
+
+@keyframes close{
+    0%{
+        transform: translateX(40px);
+        -webkit-transform: translateX(40px);
+        -moz-transform: translateX(40px);
+        -ms-transform: translateX(40px);
+        -o-transform: translateX(40px);
+}
+    100%{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
